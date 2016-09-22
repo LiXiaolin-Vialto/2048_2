@@ -7,7 +7,7 @@ function Tile(position,value) {
     this.value = value || 2;
 
     this.previousPosition = null;
-    this.mergedForm = null;
+    this.mergedFrom = null;
 }
 Tile.prototype.savePosition = function () {
     this.previousPosition = {x:this.x,y:this.y}
