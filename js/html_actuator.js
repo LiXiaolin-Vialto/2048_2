@@ -26,7 +26,8 @@ HTMLActuator.prototype.actuate = function (grid, metadata) {
         self.updateBestScore(metadata.bestScore);
         self.updateScore (metadata.score);
 
-        if(metadata.terminate){
+        if(metadata.terminated){
+            console.log(metadata.won);
             if(metadata.won){
                 self.message(true);
             }
@@ -119,7 +120,7 @@ HTMLActuator.prototype.updateBestScore = function (bestScore) {
 
 HTMLActuator.prototype.message = function (won) {
     var type = won ?"game-won":"game-over";
-    var message = won? "You won" :"Game over!";
+    var message = won? "You won!" :"Game over!";
 
     this.messageContainer.classList.add(type);
     this.messageContainer.getElementsByTagName("p")[0].textContent = message;
